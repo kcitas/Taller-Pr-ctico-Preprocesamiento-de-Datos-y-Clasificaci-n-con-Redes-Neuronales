@@ -1,28 +1,3 @@
-# Taller Práctico: Preprocesamiento de Datos y Clasificación con Redes Neuronales
-
-**Autor:** Santiago cabeza mendez u00170228
-**Dataset:** Pacientes Cardíacos (UCI)  
-**Plataforma:** [ScienxLab Playground](https://playground.scienxlab.org)
-
----
-
-## Objetivo
-
-Preparar y preprocesar un dataset real de pacientes cardíacos, transformarlo al formato JSON e implementar un modelo de Red Neuronal Artificial en ScienxLab Playground, analizando el impacto de la arquitectura y la tasa de aprendizaje (Learning Rate).
-
----
-
-## Estructura del Repositorio
-
-```
-taller-redes-neuronales/
-├── data/
-│   └── pacientes_nn.json       ← Dataset preprocesado (298 registros)
-├── src/
-│   └── preprocesamiento.py     ← Script de preprocesamiento completo
-├── screenshots/                ← Capturas de los experimentos en ScienxLab
-└── README.md
-```
 
 ---
 
@@ -79,6 +54,28 @@ taller-redes-neuronales/
 | 0.1 | 0.243 | 0.229 | 0.851 | 0.672 | Convergencia rápida |
 | 0.3 | 0.267 | 0.220 | 0.866 | 0.711 | Bueno pese al LR alto |
 
+### Capturas de Pantalla por Experimento
+
+**LR = 0.003 ⭐ (Mejor resultado)**
+
+![LR 0.003](screenshots/03_lr_0.003_resultado.png)
+
+**LR = 0.01**
+
+![LR 0.01](screenshots/02_lr_0.01_resultado.png)
+
+**LR = 0.03**
+
+![LR 0.03](screenshots/01_lr_0.03_resultado.png)
+
+**LR = 0.1**
+
+![LR 0.1](screenshots/04_lr_0.1_resultado.png)
+
+**LR = 0.3**
+
+![LR 0.3](screenshots/05_lr_0.3_resultado.png)
+
 ---
 
 ## Paso 4: Mejor Configuración
@@ -117,7 +114,6 @@ ReLU `f(x) = max(0, x)` evita el problema del gradiente desvaneciente de sigmoid
 
 ```python
 import math
-
 def forward(X1, X2):
     """
     Red Neuronal entrenada con LR=0.003, arquitectura [4,2], ReLU.
@@ -130,14 +126,11 @@ def forward(X1, X2):
     a2 = max(0, -0.055 + (0.0083 * X1) + (-0.82 * X2))
     a3 = max(0, -0.58 + (-0.51 * X1) + (-0.95 * X2))
     a4 = max(0, 0.37 + (0.059 * X1) + (-0.71 * X2))
-
     # Capa oculta 2: 2 neuronas (activación ReLU)
     a5 = max(0, 0.54 + (0.51 * a1) + (-0.15 * a2) + (-1.1 * a3) + (0.077 * a4))
     a6 = max(0, 0.13 + (-0.18 * a1) + (-0.91 * a2) + (0.49 * a3) + (0.79 * a4))
-
     # Capa de salida: 1 neurona (activación Tanh)
     a7 = math.tanh(-0.22 + (1.3 * a5) + (-1.1 * a6))
-
     return a7  # > 0 → clase 1 (problema cardíaco) | < 0 → clase -1 (sin problema)
 ```
 
@@ -148,7 +141,6 @@ def forward(X1, X2):
 
 ```python
 import math
-
 def forward(X1, X2):
     a1 = max(0, -0.53 + (-0.45 * X1) + (-0.98 * X2))
     a2 = max(0, 1.1 + (-0.28 * X1) + (0.64 * X2))
@@ -166,7 +158,6 @@ def forward(X1, X2):
 
 ```python
 import math
-
 def forward(X1, X2):
     a1 = max(0, -1.6 + (-0.12 * X1) + (-2.3 * X2))
     a2 = max(0, -2.1 + (-1.6 * X1) + (-3.2 * X2))
@@ -184,7 +175,6 @@ def forward(X1, X2):
 
 ```python
 import math
-
 def forward(X1, X2):
     a1 = max(0, -3.9 + (-1.5 * X1) + (-4.5 * X2))
     a2 = max(0, -1.5 + (-3.1 * X1) + (-2.7 * X2))
@@ -202,7 +192,6 @@ def forward(X1, X2):
 
 ```python
 import math
-
 def forward(X1, X2):
     a1 = max(0, 0.55 + (-0.051 * X1) + (-2.2 * X2))
     a2 = max(0, 0.18 + (-0.48 * X1) + (-0.24 * X2))
