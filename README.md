@@ -1,6 +1,6 @@
 # Taller Práctico: Preprocesamiento de Datos y Clasificación con Redes Neuronales
 
-**Autor:** Santiago  
+**Autor:** Santiago cabeza mendez u00170228
 **Dataset:** Pacientes Cardíacos (UCI)  
 **Plataforma:** [ScienxLab Playground](https://playground.scienxlab.org)
 
