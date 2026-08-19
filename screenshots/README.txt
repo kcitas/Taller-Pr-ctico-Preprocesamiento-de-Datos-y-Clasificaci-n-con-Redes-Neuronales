@@ -1,6 +1,6 @@
 Carpeta para capturas de pantalla de ScienxLab Playground
 
-Agrega aquí las siguientes imágenes:
+
 
 1. config_red.png        - Configuración de la red en ScienxLab (hiperparámetros)
 2. experimento_lr003.png - Resultado con LR = 0.003
