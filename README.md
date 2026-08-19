@@ -1,6 +1,19 @@
-
+**Autor:** Santiago cabeza mendez u00170228
+**Dataset:** Pacientes Cardíacos (UCI)  
+**Plataforma:** [ScienxLab Playground](https://playground.scienxlab.org)
 ---
+## Objetivo
+Preparar y preprocesar un dataset real de pacientes cardíacos, transformarlo al formato JSON e implementar un modelo de Red Neuronal Artificial en ScienxLab Playground, analizando el impacto de la arquitectura y la tasa de aprendizaje (Learning Rate).
+---
+## Estructura del Repositorio
 
+taller-redes-neuronales/
+├── data/
+│   └── pacientes_nn.json       ← Dataset preprocesado (298 registros)
+├── src/
+│   └── preprocesamiento.py     ← Script de preprocesamiento completo
+├── screenshots/                ← Capturas de los experimentos en ScienxLab
+└── README.md
 ## Paso 1: Preprocesamiento de Datos
 
 **Variables seleccionadas:**
